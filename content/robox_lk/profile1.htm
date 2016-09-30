@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>100</title>
+  <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+  <link href="Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.placeholder.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.ui.datepicker-ru.js"></script>
+
+ <script type="text/javascript">
+ 
+ (function ($)
+ {
+     $.fn.AddXbutton = function (options)
+     {
+         var defaults = {
+             img: 'x.gif'
+         };
+         var opts = $.extend(defaults, options);
+         $obj = $(this);
+         $(this).each(
+         function (i)
+         {
+             $(this).addClass("innerButton");
+             $(this).after(
+                 $('<input type="image" id="xButton' + i + '" src="' + opts['img'] + '" />')
+                     .css({ 'display': 'none', 'cursor': 'pointer', 'marginLeft': '-30px', 'marginTop': '0px', 'marginBottom': '-4px', 'padding': '0px', 'width': '20px', 'height': '20px', 'border': 'none' })
+                     .click(function ()
+                     {
+                         $obj.val('').focus();
+                         $("#xButton" + i).hide();
+                     }))
+             .keyup(function ()
+             {
+                 if ($(this).val().length > 0)
+                 {
+                     $("#xButton" + i).show();
+                 } else
+                 {
+                     $("#xButton" + i).hide();
+                 }
+                 if ($(this).val() != '') $("#xButton" + i).show();
+             });
+         });
+     };
+ })(jQuery);
+ 
+
+$(document).ready(function() {
+     $('#addressInput').AddXbutton({ img: 'Content/images/cancel.png' });
+     $('#addressInput').focus();
+ });
+ 
+$(function () {
+	$("#tabs").tabs();
+});
+
+  </script>
+</head>
+<body>
+<div id="content">
+
+<!-- msg -->
+<div id="topnote">
+Информация сохранена. <a href="#">Отменить?</a></div>
+<!-- /msg -->
+
+<div id="headline">
+<!-- top -->
+  <div class="logo"><img src="Content/images/robo3.gif" width="102" height="18" align="absmiddle" /> &#8212; САМЫЙ УДОБНЫЙ СПОСОБ ОПЛАТЫ</div>
+  <div class="headline_right">
+    <a href="#" >Поддержка</a>
+    <div class="rdot"></div>
+    <span class="bonus-up">2970</span>
+    <a href="#">Бонусы</a>
+    <div class="rdot"></div>
+    <a href="#" class="tmail">ivan.toporyshkin@gmail.com</a>
+  </div>
+<!-- /top -->
+</div>
+
+<div id="box1">
+  
+  <div id="header" class="border1">
+  <!-- menu -->
+    <div class="mar_title_pic"><img src="Content/images/icon.gif" width="47" height="49" align="absmiddle" /></div><div class="mar_title">Личный кабинет</div>
+    <div id="mainmenu">
+        <a href="#">Операции</a>
+        <a href="#">Бонусы</a>
+        <a href="#">Деньги</a>
+        <a href="#" class="sel">Мой профиль</a>
+    </div>
+  <!-- /menu -->
+  </div>
+
+  <div align="center" id="main1" class="border1">
+    <div id="content_box">
+    <!-- main -->
+    <div id="profile-cont">
+<div class="profile-tit">Информация о пользователе</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="32%">
+    <div>Имя пользователя</div><input name="uname" type="text">
+    <div>Email</div><input name="uname" type="text">
+    <div>Телефон</div><input name="uname" type="text">
+    <a href="#" class="add-tel">Добавить еще телефон...</a>
+    
+    
+    </td>
+    <td width="68%">
+    <div id="profile-rcont">
+        <div>Аккаунт в социальных сетях</div>
+        <a href="#"><img border="0" align="absmiddle" width="30" height="30" src="Content/images/ic-vkontakte.png">Вконтакте</a>
+        <a href="#"><img border="0" align="absmiddle" width="30" height="30" src="Content/images/ic-facebook.png">Facebook</a>
+        <a href="#"><img border="0" align="absmiddle" width="30" height="30" src="Content/images/ic-twitter.png">Twitter</a>
+        <a href="#"><img border="0" align="absmiddle" width="30" height="30" src="Content/images/ic-livejournal.png">LiveJournal</a>
+        <a href="#"><img border="0" align="absmiddle" width="30" height="30" src="Content/images/plus.png">Добавить еще...</a>
+        
+       
+        
+        <div class="profile-rtit1">Адрес</div>
+        <input name="uname" type="text" id="addressInput" style="">
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="41%"><div>Город</div>
+        <input name="uname" type="text"></td>
+    <td width="41%"><div>Улица</div>
+        <input name="uname" type="text"></td>
+    <td width="18%"><div>Дом</div>
+        <input name="uname" type="text"></td>
+  </tr>
+</table>
+<a href="#" class="add-tel">Добавить еще адрес...</a>
+        
+    </div>
+    </td>
+  </tr>
+</table>
+<div class="buttonline"><a href="#">Сохранить</a></div>
+<br />
+<div class="profile-tit">Способы входа</div>
+<div id="tabs">
+	<ul>
+		<li>
+			<a href="#tabLogin" title="По логину/паролю">
+				<img src="Content/images/space.gif" width="1" height="30" border="0" align="left" />По логину/паролю
+			</a>
+		</li>
+		<li>
+			<a href="#tabEmail" title="По Email">
+				<img src="Content/images/space.gif" width="1" height="30" border="0" align="left" />По Email
+			</a>
+		</li>
+		<li>
+			<a href="#tabYandex" title="Яндекс">
+				<img src="Content/images/ic-yandex.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+		<li>
+			<a href="#tabVkontakte" title="Вконтакте">
+				<img src="Content/images/ic-vkontakte.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+		<li>
+			<a href="#tabFacebook" title="Facebook">
+				<img src="Content/images/ic-facebook.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+		<li>
+			<a href="#tabTwitter" title="Twitter">
+				<img src="Content/images/ic-twitter.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+		<li>
+			<a href="#tabLiveJournal" title="LiveJournal">
+				<img src="Content/images/ic-livejournal.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+		<li><a href="#tabAdd" title="Добавить еще">
+				<img src="Content/images/plus.png" width="30" height="30" border="0" align="absmiddle" />
+			</a>
+		</li>
+	</ul>
+	<div id="tabLogin" class="tab">
+		<div class="profile-pass">
+			<div>Старый пароль</div>
+			<input id="passOld" type="password"/>
+			<div>Новый пароль</div>
+			<input id="passNew" type="password"/>
+		</div>
+		<div class="profile-pass">
+			<div>Логин</div>
+			<input name="login" type="text" value="Vasya" style="background-color:#DDDDDD" readonly/>
+			<div>Новый пароль (еще раз)</div>
+			<input id="passConfirm" type="password"/>
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>            
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<div class="buttonline"><a id="btnChangePass" href="#" style="color:White">Сменить пароль</a></div>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<div id="note" style="display:none;"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="tabEmail" class="tab">
+		<div class="profile-pass">
+			<div>Email</div><input name="authEmail" type="text" value="vasya@mail.ru">
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnChangeEmail" href="#" style="color:White">Сменить Email</a></div>
+	</div>
+	<div id="tabYandex" class="tab">
+		<div class="profile-pass">
+			<div>Email Яндекс</div><input type="text" />
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnSaveYa" href="#" style="color:White">Сохранить</a></div>
+	</div>
+	<div id="tabVkontakte" class="tab">
+		<div class="profile-pass">
+			<div>Id Вконтакте</div><input type="text" />
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnSaveVk" href="#" style="color:White">Сохранить</a></div>
+	</div>
+	<div id="tabFacebook" class="tab">
+		<div class="profile-pass">
+			<div>Id Facebook</div><input type="text" />
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnSaveFb" href="#" style="color:White">Сохранить</a></div>
+	</div>
+	<div id="tabTwitter" class="tab">
+		<div class="profile-pass">
+			<div>Id Twitter</div><input type="text" />
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnSaveTw" href="#" style="color:White">Сохранить</a></div>
+	</div>
+	<div id="tabLiveJournal" class="tab">
+		<div class="profile-pass">
+			<div>Id LiveJournal</div><input type="text" />
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnSaveLj" href="#" style="color:White">Сохранить</a></div>
+	</div>
+	<div id="tabAdd" class="tab">
+		<div class="profile-pass">
+			<div>Выберите способ входа</div>
+			<select>
+				<option value="0">По Email</option>
+				<option value="1">Яндекс</option>
+				<option value="2">Вконтакте</option>
+			</select>
+		</div>
+		<div style="clear: both;"><img src="Content/images/space.gif" width="1" height="1" /></div>
+		<div class="buttonline"><a id="btnAdd" href="#" style="color:White">Добавить</a></div>
+	</div>
+</div>
+    
+ <!-- /main -->
+    </div>
+
+    <div id="copyright">&copy; 2012 ЗАО &quot;Центр Интернет платежей&rdquo;</div>
+  </div>
+
+</div>
+
+<div id="footer">
+<!-- footer -->
+  <div id="pci_box">
+    <img src="Content/images/logo_pci.gif" width="97" height="32" />
+    <div>Безопасность платежей гарантируется сертификатами THAWTE и PCI. Посмотреть сертификаты подробнее.</div>
+  </div>
+
+  <div id="footermenu">
+    <a href="#">Обратная связь</a>
+    <div class="rdot"></div>
+    <a href="#">Частые вопросы</a>
+    <div class="rdot"></div>
+    <a href="#">Предложите способ оплаты</a>
+  </div>
+<!-- /footer -->
+</div>
+
+</div>
+</body>
+</html>

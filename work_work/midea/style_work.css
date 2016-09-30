@@ -1,0 +1,31 @@
+.masonry {
+    -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    
+    column-gap: 0; /* Общее расстояние между колонками */
+    -moz-column-gap: 0; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 0;
+   }
+
+.masonry img { margin-bottom: 5px; margin-top: 10px; margin-left: 15px; margin-right: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.5);}
+
+
+@media only screen and (max-width: 1014px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+
+@media only screen and (max-width: 877px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+    .masonry img { }
+    
+}

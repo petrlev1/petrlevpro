@@ -1,0 +1,6 @@
+.fitnes_klubi_filter { display: none; }
+
+.advance { position: absolute; top: 430px; width: 425px; }
+.adv_but_link { font-size: 14px; color: #0d76d8; text-decoration: none; border-bottom: 1px #0d76d8; border-bottom-style: dashed; cursor: pointer;  }
+.tadv_but[type="checkbox"]:checked ~ .fitnes_klubi_filter { display: block; }
+.tadv_but { display: none; }

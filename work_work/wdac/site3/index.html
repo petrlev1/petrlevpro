@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8" />
+<title>Untitled Document</title>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+<link href="content/css100.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  // сохраняем высоту шапки
+  var headerHeight = $('header').height();
+  
+  // прокрутка при клике по пункту меню 
+  $("a.header-nav-link").click(function(e) {
+    e.preventDefault();
+    // вычисляем смещение от начала документа до нужного раздела
+    var offsetTop = $("#"+$(this).data("target")).offset().top - headerHeight;
+    // производим прокрутку
+    $('html, body').animate({scrollTop: offsetTop}, 1000);
+  });
+  // обработка скроллинга (изменение активного элемента меню)
+  $(document).scroll(function(){
+    var offsets = [];
+    $('nav a').each(function(index, element){
+      // собираем в массиве offsets смещения разделов относительно начала документа
+      offsets.push($("#" + $(element).data('target')).offset().top);
+    });
+    // дополняем массив еще одним елементом- высота всего документа
+    offsets.push($(document).height());
+    // изменяем активный пункт как только область зашла за полэкрана: $(window).height() / 2
+    var docScroll = $(document).scrollTop() + headerHeight + $(window).height() / 2;
+    for (var i = 0; i < offsets.length - 1; i++) {
+      if (docScroll >= offsets[i] && docScroll < offsets[i+1]) {
+        $('.active').removeClass('active');
+        $('nav a').eq(i).addClass('active');
+        break;
+      };
+    };
+  });
+})
+
+$(window).scroll(function(){
+
+    if ($(window).scrollTop() > 360) {
+        document.getElementById('inmenu').className = 'hmenu2 logo2' 
+    }
+    else {
+        document.getElementById('inmenu').className = 'hmenu logo'
+    }
+});
+</script>
+
+
+<script type="text/javascript">
+var array = new Array();
+var speed = 10;
+var timer = 10;
+ 
+// Loop through all the divs in the slider parent div //
+// Calculate seach content divs height and set it to a variable //
+function slider(target,showfirst) {
+ var slider = document.getElementById(target);
+ var divs = slider.getElementsByTagName('div');
+ var divslength = divs.length;
+ for(i = 0; i < divslength; i++) {
+ var div = divs[i];
+ var divid = div.id;
+ if(divid.indexOf("header") != -1) {
+ div.onclick = new Function("processClick(this)");
+ } else if(divid.indexOf("content") != -1) {
+ var section = divid.replace('-content','');
+ array.push(section);
+ div.maxh = div.offsetHeight;
+ if(showfirst == 1 && i == 1) {
+ div.style.display = 'block';
+ } else {
+ div.style.display = 'none';
+ }
+ }
+ }
+}
+ 
+// Process the click - expand the selected content and collapse the others //
+function processClick(div) {
+ var catlength = array.length;
+ for(i = 0; i < catlength; i++) {
+ var section = array[i];
+ var head = document.getElementById(section + '-header');
+ var cont = section + '-content';
+ var contdiv = document.getElementById(cont);
+ clearInterval(contdiv.timer);
+ if(head == div && contdiv.style.display == 'none') {
+ contdiv.style.height = '0px';
+ contdiv.style.display = 'block';
+ initSlide(cont,1);
+ } else if(contdiv.style.display == 'block') {
+ initSlide(cont,-1);
+ }
+ }
+}
+ 
+// Setup the variables and call the slide function //
+function initSlide(id,dir) {
+ var cont = document.getElementById(id);
+ var maxh = cont.maxh;
+ cont.direction = dir;
+ cont.timer = setInterval("slide('" + id + "')", timer);
+}
+ 
+// Collapse or expand the div by incrementally changing the divs height and opacity //
+function slide(id) {
+ var cont = document.getElementById(id);
+ var maxh = cont.maxh;
+ var currheight = cont.offsetHeight;
+ var dist;
+ if(cont.direction == 1) {
+ dist = (Math.round((maxh - currheight) / speed));
+ } else {
+ dist = (Math.round(currheight / speed));
+ }
+ if(dist <= 1) {
+ dist = 1;
+ }
+ cont.style.height = currheight + (dist * cont.direction) + 'px';
+ cont.style.opacity = currheight / cont.maxh;
+ cont.style.filter = 'alpha(opacity=' + (currheight * 100 / cont.maxh) + ')';
+ if(currheight < 2 && cont.direction != 1) {
+ cont.style.display = 'none';
+ clearInterval(cont.timer);
+ } else if(currheight > (maxh - 2) && cont.direction == 1) {
+ clearInterval(cont.timer);
+ }
+}
+</script>
+
+
+</head>
+
+<body onload="slider('slider',0)">
+
+<nav class="header-nav">
+  <div id="inmenu" class="hmenu">
+    <div class="hmenuwith">
+      <div id="logo" class="logo"><a href="" class="header-nav-link" data-target="main"><img src="content/img/logo2.png" /></a></div>
+      <div class="menu_li1">
+        <a href="" class="header-nav-link active" data-target="raboti">Работы</a>
+        <a href="" class="header-nav-link" data-target="onas">О нас</a>
+        <a href="" class="header-nav-link" data-target="price">Цены</a>
+        <a href="" class="header-nav-link" data-target="cont">Контакты</a>
+        </div>
+    </div>
+  </div>
+</nav>
+    
+    <!--<div class="menulinks">
+    <a href="" class="header-nav-link" data-target="main">Услуги</a> 
+    <a href="#">Работы</a> 
+    <a href="#">Работы</a> 
+    </div> -->
+    
+    <!--<nav class="header-nav">
+        <a href="" class="header-nav-link" data-target="main">Главная</a>
+        <a href="" class="header-nav-link" data-target="two">Главная</a>
+      </nav> -->
+
+<div class="bodyuptext">
+
+<div class="uptext">
+    Мы разрабатываем сайты с учетом всех современных требований веб-дизайна и поисковой оптимизации, поэтому последующее продвижение наших сайтов дает максимальный эффект в привлечении посетителей и клиентов. 
+    
+  </div>
+  <section id="main"></section>
+</div>
+
+<section id="raboti"></section>
+<div class="cont1" style="background: rgba(255, 255, 255, 0.95);">
+  <h1 style="background: rgba(255, 255, 255, 0.95); color: #808080; text-shadow: 0 1px 8px #CFCFCF;">Примеры работ</h1>
+<div class="cont2">
+
+<div id="works">
+
+<div id="slider">
+
+ <div class="header" id="1-header">
+ <div class="worksdate">05.11.14</div>
+<h2>Вторая версия сайта для компании 
+ООО «КБ «ФИНПРА»</h2>
+<p>В сфере деятельности компании «КБ «Финпра» — современное оборудование и расходные материалы для биотехнологий, биофармацевтики, медицинских учреждений, а также предприятий пищевого и химического производства.</p>
+
+
+<div class="workscont">
+<div class="content" id="1-content">
+ <div class="links"><span>http://</span><a href="http://new2.cb-finpra.ru/" target="_blank">cb-finpra.ru</a></div>
+ <img src="content/img/sites/cb_finpra2_1.jpg" />
+ </div></div></div>
+
+<div class="header" id="3-header">
+ <div class="worksdate">11.06.13</div>
+<h2>Сайт для логистической компании «Alianselogistic»</h2>
+<div class="workscont">
+<p>Компания ООО «Альянс» осуществляет перевозки по России всеми видами транспорта и гарантирует доставку Вашего груза в целости и сохранности.</p>
+ <div class="content" id="3-content">
+ <div class="links"><span>http://</span><a href="http://alianselogistic.wdac.ru" target="_blank">alianselogistic.wdac.ru</a></div>
+ <img src="content/img/sites/alianselogistic1.jpg" />
+ </div></div></div>
+ 
+<div class="header" id="2-header">
+ <div class="worksdate">17.04.13</div>
+<h2>Сайт для компании «Cerama Best»</h2>
+<div class="workscont">
+<p>Компания «Cerama Best» является официальным дистрибьютором Louis Valentino Porcellanato, одного из крупнейших азиатских экспортеров плитки в Европу и ведущего экспортера керамогранита в Азию и страны западной Еропы.</p>
+ <div class="content" id="2-content">
+<div class="links"><span>http://</span><a href="http://ceramabest.ru" target="_blank">ceramabest.ru</a></div>
+<img src="content/img/ceramabest1.jpg" /><br />
+</div></div></div>
+
+<div class="header" id="russtroy-header">
+ <div class="worksdate">20.02.13</div>
+<h2>Сайт для строительной компании «РУССТРОЙ»</h2>
+<div class="workscont">
+<p>РУССТРОЙ &#8212; молодая и современная строительная компания.</p>
+ <div class="content" id="russtroy-content">
+<div class="links"><span>http://</span><a href="http://russtroy.ru.com" target="_blank">russtroy.ru.com</a></div>
+<img src="content/img/sites/russtroy1.jpg" /></div></div></div>
+
+<div class="header" id="hinkali-header">
+ <div class="worksdate">08.02.13</div>
+<h2>Сайт ресторана «Дом Хинкали»</h2>
+<div class="workscont">
+<p>Дом Хинкали &#8212; место, где вам рады всегда! <br />
+  На сайте вы сможете ознакомиться со всем многообразием настоящей грузинской кухни и узнать о фирменных блюдах от шеф-повара, блюдах на мангале и кеци и о разнообразных десертах.</p>
+ <div class="content" id="hinkali-content">
+<div class="links"><span>http://</span><a href="http://domkhinkali.ru" target="_blank">domkhinkali.ru</a></div>
+<img src="content/img/sites/hinkali1.jpg" /> </div></div></div>
+
+<div class="header" id="aurelia-header">
+ <div class="worksdate">08.02.13</div>
+<h2>Сайт для компании «Aurelia»</h2>
+<div class="workscont">
+<p> К настоящему времени компания «АУРЕЛИЯ» является хорошо известным на российском рынке производителем декоративных лаков для ногтей и средств по уходу за натуральными ногтями.</p>
+ <div class="content" id="aurelia-content">
+ <p> Собственные торговые марки компании хорошо известны и любимы потребителем. В ассортиментном активе компании более 100 средств по уходу за натуральными ногтями и более 600 оттенков декоративных лаков.</p>
+<div class="links"><span>http://</span><a href="http://www.aurelia-laki.ru" target="_blank">aurelia-laki.ru</a></div>
+<img src="content/img/sites/aurelia_laki.jpg" /> </div></div></div>
+
+<div class="header" id="emvann-header">
+ <div class="worksdate">08.02.13</div>
+<h2>Сайт для компании «Emvann»</h2>
+<div class="workscont">
+<p>Сайт по эмалировке ванн emvann.ru включает в себя все самые модные направления в области разработки сайтов. В частности сайт имеет современную структуру с расположенной в центре слайд галерей.</p>
+ <div class="content" id="emvann-content">
+ 
+<div class="links"><span>http://</span><a href="http://emvann.ru" target="_blank">emvann.ru</a></div>
+<img src="content/img/sites/emvann1.jpg" /> </div></div></div>
+
+<div class="header" id="moonshine_shop-header">
+ <div class="worksdate">08.02.13</div>
+<h2>Интернет-магазина одежды «Moonshine-shop»</h2>
+<div class="workscont">
+<p>Интернет-магазин moonshine-shop.ru имеет все современные функции в области разработки сайтов. Выполнен в чёрно-белых тонах символизирующих сияние луны.</p>
+ <div class="content" id="moonshine_shop-content">
+ 
+<div class="links"><span>http://</span><a href="http://moonshine-shop.wdac.ru" target="_blank">moonshine-shop.wdac.ru</a></div>
+<img src="content/img/sites/moonshine_shop1.jpg" /> </div></div></div>
+
+<div class="header" id="elit_vine-header">
+ <div class="worksdate">08.02.13</div>
+<h2>Интернет-магазина элитных вин</h2>
+<div class="workscont">
+<p>Интренет-магазин для салона элитных вин «Сигары, Табак, Элитные вина» расположенный в центре Москвы предлагает своим клиентам широкий ассортимент алкогольный продукции известных мировых брэндов.</p>
+ <div class="content" id="elit_vine-content">
+ 
+<div class="links"><span>http://</span><a href="http://elit-vino.wdac.ru" target="_blank">elit-vino.ru</a></div>
+<img src="content/img/sites/vino1000.jpg" /> </div></div></div>
+
+<h1 style="margin: 0 auto; display: block;"><a href="http://wdac.ru/works/" target="_blank">Смотреть все работы</a></h1>
+
+</div>
+
+</div>
+<section id="onas"></section>
+<a name="onas"></a>
+</div>
+</div>
+
+
+<div class="cont1" style="background-color: #ffffff; background: url(content/img/back_onas.jpg) center top no-repeat #ffffff; 
+background-attachment: fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+<h1 style="background-color: #ffffff; background: url(content/img/back_onas.jpg) center top fixed no-repeat #ffffff; color: #777;
+background-attachment: fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">О нас</h1>
+<div class="cont2"><img src="content/img/o_nas100.png" width="546" /><br />
+  Мы является небольшой, но профессиональной группой разработчиков, предоставляющих услуги в области создания сайтов и систем администрирования. <br />
+  <br />
+  Наш опыт работы в области интернет разработок и графического дизайна составляет более 5 лет, а наши цены доступны практически любой компании, желающей иметь свое интернет представительство или рекламировать свои товары в интернете.
+  <br /><br />
+  <section id="price"></section>
+</div>
+
+</div>
+
+<div class="cont1" style="background-color: #4C6B39; background: url(content/img/price_back.jpg) top center fixed;">
+<h1 style="background-color: #4C6B39; color: #FFF; 
+background: url(content/img/price_back.jpg) center top fixed;">Прайс</h1>
+<div class="cont2"> 
+<div class="inprice">
+<ul>
+<h1>МиниСайт</h1>
+<li>Шаблонный дизайн</li>
+<li>Верстка сайта</li>
+<li>5 внутренних страниц</li>
+<li class="noli">&nbsp;</li>
+<div>9 000 руб.</div>
+</ul>
+<ul>
+<h1>Сайт</h1>
+<li>Шаблонный дизайн</li>
+<li>Каталога продукции</li>
+<li>Система управления сайтом (CMS)</li>
+<li>Оптимизация сайта</li>
+<div>14 000 руб.</div>
+</ul>
+<ul>
+<h1>БигСайт</h1>
+<li>Индивидуальный дизайн</li>
+<li>Адаптивная верстка</li>
+<li>Каталога продукции</li>
+<li>Система управления сайтом (CMS)</li>
+<li>Оптимизация сайта</li>
+<li>Регистрация домена и хостинга</li>
+<li>Продвижение сайта (1 месяц)</li>
+<li>Бесплатная поддержка (1 месяц)</li>
+<li class="noli">&nbsp;</li>
+<div>31 000 руб.</div>
+</ul><ul>
+<h1>КингСайт</h1>
+<li>Индивидуальный дизайн (премиум)</li>
+<li>Адаптивная верстка</li>
+<li>Каталога продукции</li>
+<li>Система управления сайтом (CMS)</li>
+<li>Оптимизация сайта</li>
+<li>Регистрация домена и хостинга</li>
+<li>Подключение интернет-магазина</li>
+<li>Продвижение сайта (3 месяца)</li>
+<li>Бесплатная поддержка (3 месяца)</li>
+<div>52 000 руб.</div>
+</ul>
+<ul style="width: 89%;">
+<h1>МультиСайт</h1>
+<p>Вы сами добавляете/убираете необходимые компоненты для Вашего сайта:</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%" valign="top">
+    
+    <label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Шаблонный дизайн</p>
+</label>
+    
+   <label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Индивидуальный дизайн</p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Верстка сайта</p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Адаптивная верстка</p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Каталог продукции</p>
+</label>
+
+    </td>
+    <td width="33%" valign="top">
+    
+    <label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Система управления сайтом (CMS)</p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Оптимизация сайта</p>
+</label>  
+    
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span>
+    <p>Регистрация домена</p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span>
+    <p>Регистрация хостинга</p>
+</label>
+
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Подключение интернет-магазина</p>
+</label>
+
+
+    </td>
+    <td width="33%" valign="top">
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span>
+    <p>Продвижение сайта <nobr>(1 месяц)</nobr></p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span>
+    <p>Продвижение сайта <nobr>(3 месяца)</nobr></p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span>
+    <p>Поддержка сайта <nobr>(1 месяц)</nobr></p>
+</label>
+
+<label class="myCheckbox">
+    <input type="checkbox" name="test"/><span></span><p>Поддержка сайта <nobr>(3 месяца)</nobr></p>
+</label>
+
+    </td>
+  </tr>
+</table>
+
+
+<div>20 000 руб.</div>
+</ul>
+</div>
+
+<section id="cont"></section>
+</div>
+
+</div>
+
+
+<div class="cont1" style="background: url(content/img/back_cont.jpg) center top no-repeat #F5532F;">
+<h1 style="background-color: #F5532F; color: #ffffff;">Контакты</h1>
+<div class="cont2">
+<div class="formtext">
+<p>Задавайте любые интересующие вопросы:</p>
+<p>Телефон: +7 (495) 794-47-23 | Почта: <a href="#" style="color: #FFF;">sites@wdac.ru</a></p>
+</div>
+<br />
+<form action="" method="get">
+<input name="" type="text" / class="form1" placeholder="E-Mail">
+<br /><br />
+<textarea name="textarea" rows="7" class="form1" placeholder="Спрашивайте"></textarea>
+
+<a href="#" class="button8">Отправить</a>
+</form>
+
+</div>
+<div id="footer">© 2009-2014 WebDesignArtComp.  Разработка сайтов, продвижение сайтов, система управления сайтом.</div>
+</div>
+
+
+</body>
+</html>

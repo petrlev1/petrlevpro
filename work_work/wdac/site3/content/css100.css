@@ -1,0 +1,181 @@
+* { margin:0; padding:0; }
+   
+   
+   
+body { font-family: Open Sans, Tahoma, Geneva, sans-serif; font-size: 28px; font-weight: 100;
+background-color: #ffffff; background: url(img/back2.jpg) center top no-repeat; 
+background-attachment: fixed; !important;
+-webkit-background-size: cover; !important;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover; }
+
+a  { text-decoration: none; 
+-webkit-transition-duration: 0.2s; -moz-transition-duration: 0.2s; -o-transition-duration: 0.2s; -ms-transition-duration: 0.2s; transition-duration: 0.2s;}
+a img  { text-decoration: none; border: none; }
+a:link, a:visited { color: #3781CC; }
+a:hover { color: #FF3021; }
+
+
+nav { display: block; width: 100%; z-index: 100; text-align: right; position: fixed; }
+nav a { display: inline-block; color: #999999; text-decoration: none; letter-spacing: 0.4px; }
+nav a:hover { color: #FF3021; }
+#inmenu { width: 100%; font-family: Open Sans, Tahoma, Geneva, sans-serif; font-size: 20px; font-weight: 100; }
+.hmenu { height: 60px; margin-top: 10px;
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.hmenu a { margin: 19px 0px 0px 26px; color: #A5A5A5; }
+.hmenu2 { height: 46px; background: bottom rgba(0, 0, 0, 0.8);
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.hmenu2 a { font-size: 15px; margin: 12px 10px 0px 10px; color: #A5A5A5; }
+.hmenuwith { width: 75%; margin: 0 auto; }
+#logo { margin: 5px 0px 0px 10px; position: absolute; }
+#logo a { margin: 0px 0px 0px 0px; }
+.logo img { width: 110px; 
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.logo2 img { width: 80px; margin-top: -3px;
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+
+.header-nav .active { color: #FF3021; }
+
+.cont1 { width: 100%; text-align: center; background: url(img/line.gif) top repeat-x; z-index: 2; position: relative; padding: 0px 0px 0px 0px; }
+
+.cont1 h1 { display: inline-block; margin: -30px auto; font-weight: 100; padding: 0px 16px 0px 16px; 
+-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+
+.cont2 { width: 900px; margin: 0 auto; text-align: center; padding: 50px 0px 80px 0px;  }
+
+.bodyuptext { display: block; height: 400px; }
+.uptext { width: 750px; height: 240px; text-align: center; padding: 70px 0px 50px 0px; display: block; z-index: 1; 
+position: fixed; left: 0; top: 60px; right: 0; margin: auto; font-weight: 100; }
+
+.links { margin-bottom: 15px; margin-top: 5px; font-weight: bold; }
+.links span { color: #999; }
+
+
+#slider { font-size: 14px; text-align: left; cursor: pointer; color: #6B6B6B; }
+.header { border: #DFF8CD solid 2px; padding: 15px 20px 15px 20px; margin: 20px 0px 25px 0px; background-color: #FFF;
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.header h2 { font-family: Open Sans, Tahoma, Geneva, sans-serif; font-size: 24px; 
+color: #000; display: block; margin: 0px 0px 4px 0px; font-weight: 100; }
+.header:hover { color: #666666; -webkit-box-shadow: rgba(161, 196, 135, 0.3) 0px 0px 35px; box-shadow: rgba(161, 196, 135, 0.3) 0px 0px 35px; }
+.content { overflow: hidden; }
+.content img { width: 90%; margin: 0 auto; display: block; margin-bottom: 5px;
+-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 3px; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 3px;}
+.previmg { width: 120px; margin-right: 15px; }
+
+.worksdate { font-size: 11px; display: none; }
+.workscont { clear: both; }
+.workscont p { margin: 5px 0px 5px 0px; }
+
+.inprice { color: #F8D62A; }
+
+
+.inprice ul { display: inline-block; border: #9baa93 solid 1px; width: 40%; margin: 30px 20px; padding: 20px 20px; text-align: left; }
+
+.inprice h1 { font-size: 150%; margin-top: -53px; position: absolute; padding: 0px 5px; background: url(img/price_back.jpg) top center fixed #4C6B39; }
+
+.inprice li { color: #FFFFFF; font-size: 60%; font-weight: 100; list-style: none inside; margin: 10px 0px; }
+
+.inprice li:before { content: "- "; }
+
+.inprice .noli:before { content: ""; }
+.inprice p { display: block; margin: 20px 0px 0px 10px; font-size: 60%; }
+.inprice div { color: #DFF8CD; font-size: 150%; font-weight: 100; margin-top: 20px; }
+
+.inprice label { display: block; width: 96%; font-size: 55%; margin: 18px 0px 0px 0px; color: #FFF; cursor: pointer; }
+
+.myCheckbox input { display: none; }
+
+.myCheckbox p { display: inline-block; margin: 12px 10px 0px 33px; font-size: 100%; }
+
+.myCheckbox span { vertical-align: top; 
+    width: 32px;
+    height: 35px;
+    display: block; position: absolute;
+    background: url("img/chek1.png"); background-repeat: no-repeat;
+}
+
+.myCheckbox input:checked + span {
+    background: url("img/chek2.png"); background-repeat: no-repeat;
+}
+
+
+
+.formtext { color: #FFF; text-align: left; }
+.formtext p { margin: 5px 0px 10px 0px; }
+
+.form1 { font-size: 16px; border: #FFF 1px solid; width: 100%; color: #000000; background-color: #F0F0F0;
+font-family: Open Sans, Tahoma, Geneva, sans-serif; font-weight: 100; padding: 18px 20px 18px 20px; 
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.form1:focus { background-color: #ffffff; }
+
+.form1::-webkit-input-placeholder {color:#A6A6A6;}
+.form1::-moz-placeholder          {color: #A6A6A6;}/* Firefox 19+ */
+.form1:-moz-placeholder           {color: #A6A6A6;}/* Firefox 18- */
+.form1:-ms-input-placeholder      {color: #A6A6A6;}
+
+.form1:focus::-webkit-input-placeholder {color: transparent; }
+.form1:focus::-moz-placeholder          {color: transparent}
+.form1:focus:-moz-placeholder           {color: transparent}
+.form1:focus:-ms-input-placeholder      {color: transparent}
+
+.form1::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.form1::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.form1:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.form1:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.form1:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.form1:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.form1:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.form1:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+a.button8 {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-select: none;
+  padding: 5px 25px 10px 25px; margin-top: 20px;
+  outline: none;
+  border: 1px solid;
+  border-radius: 10px;
+  -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; -ms-transition-duration: 0.3s; transition-duration: 0.3s;
+} 
+a.button8:hover { background-color: #F8D62A; color: #000; border-color: #F8D62A; 
+-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px; }
+a.button8:active { background: white; }
+
+#footer { font-size: 12px; color: #FFF; background: url(img/footershad.png) no-repeat center top; padding: 55px 0px 40px 0px; 
+letter-spacing: 1px; }
+
+
+
+
+@media screen and (max-width: 1024px) {
+	
+body { font-size: 20px; }
+.hmenu { height: 46px;
+-webkit-transition-duration: 0.4s; -moz-transition-duration: 0.4s; -o-transition-duration: 0.4s; -ms-transition-duration: 0.4s; transition-duration: 0.4s;}
+.hmenu a { font-size: 16px; margin: 12px 10px 0px 10px; }
+.logo img { width: 80px; }
+
+.cont2 { width: 800px; }
+.bodyuptext { height: 290px; }
+.uptext { width: 550px; padding: 33px 0px 50px 0px; }
+
+.inprice ul { width: 37%; font-size: 23px; }
+.inprice h1 { margin-top: -43px; }
+.myCheckbox p { display: inline-block; margin: 13px 10px 0px 33px; font-size: 14px; }
+
+}
+
+@media screen and (max-width: 610px) {
+	
+.hmenu a { font-size: 11px; margin: 16px 5px 0px 5px; }
+.hmenu2 a { font-size: 11px; margin: 16px 5px 0px 5px; }
+
+}
+
+@media screen and (max-width: 400px) {
+	
+.menu_li1 { display: none; }
+
+}

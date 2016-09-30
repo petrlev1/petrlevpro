@@ -1,0 +1,61 @@
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+	font-size: 85%;
+}
+
+h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 130%;
+	font-weight:bold;
+}
+
+h2 {
+	font-size: 122%;
+	font-weight: 100;
+	margin-bottom: 0px;
+}
+h3 {
+	font-size: 90%;
+	font-weight: 100;
+	margin-bottom: 2px; margin-top: 0px;
+}
+
+a:link {
+	color: #30507F;
+}
+
+a:visited {
+	color: #30507F;
+}
+
+a:hover {
+	color: #DB9512;
+}
+
+.panel {
+    font-size: 79%;
+}
+
+.panelAct {
+    font-size: 79%; 
+	color: #DB9512;
+	font-weight:bold;
+}
+
+a:link.panel { color: #000000; }
+a:visited.panel { color: #000000; }
+a:hover.panel { color: #DB9512; }
+
+.small {
+	font-size: 88%;
+}
+
+.small_c {
+	font-size: 74%; color: #666666;
+}
+.middle { font-size: 79%; }
+.middle2 { font-size: 90%; }
+
+.tit1 { font-size: 170%; color: #DB9512; }
+.firstmar { margin-bottom: 16px; font-size: 90%; }

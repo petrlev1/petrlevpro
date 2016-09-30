@@ -1,0 +1,216 @@
+#html_banner { position: relative; overflow: hidden; width: 320px; height: 100px; border-style: solid; border-color: #000000; border-width: 1px; 
+	background: #ffc54f; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #ffc54f 0%, #f98400 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #ffc54f 0%,#f98400 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #ffc54f 0%,#f98400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc54f', endColorstr='#f98400',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */; }
+
+#html_banner img { border-style: none;}
+
+.text {position: absolute; width: 290px; bottom: 5px; right: 0; left: 0; margin: auto; }
+.text img {width: 100%;}
+
+.toy1 {position: absolute; width: 320px; height: 100px; top: 0; bottom: 0; left: 0; margin: auto;}
+
+.v1 {position: absolute; width: 89px; height: 76px; right: 0;
+animation: v1_anim linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: v1_anim linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: v1_anim linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: v1_anim linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+}
+
+@keyframes v1_anim{
+  0% {
+    transform:  rotate(0deg) ;
+  }
+  100% {
+    transform:  rotate(360deg) ;
+  }
+}
+
+@-moz-keyframes v1_anim{
+  0% {
+    -moz-transform:  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  rotate(360deg) ;
+  }
+}
+
+@-webkit-keyframes v1_anim {
+  0% {
+    -webkit-transform:  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  rotate(360deg) ;
+  }
+}
+
+@-o-keyframes v1_anim {
+  0% {
+    -o-transform:  rotate(0deg) ;
+  }
+  100% {
+    -o-transform:  rotate(360deg) ;
+  }
+}
+
+
+.v2 {position: absolute; width: 141px; height: 93px; right: 35%; left: 0; margin: auto;
+animation: v2_anim linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: v2_anim linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: v2_anim linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: v2_anim linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;}
+
+@keyframes v2_anim{
+  0% {
+    transform:  rotate(360deg) ;
+  }
+  100% {
+    transform:  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes v2_anim{
+  0% {
+    -moz-transform:  rotate(360deg) ;
+  }
+  100% {
+    -moz-transform:  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes v2_anim {
+  0% {
+    -webkit-transform:  rotate(360deg) ;
+  }
+  100% {
+    -webkit-transform:  rotate(0deg) ;
+  }
+}
+
+@-o-keyframes v2_anim {
+  0% {
+    -o-transform:  rotate(360deg) ;
+  }
+  100% {
+    -o-transform:  rotate(0deg) ;
+  }
+}
+
+
+.v3 {position: absolute; width: 53px; height: 53px; right: 25%; bottom: -40px; margin: auto;
+animation: v3_anim linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: v3_anim linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: v3_anim linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: v3_anim linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;}
+
+@keyframes v3_anim{
+  0% {
+    transform:  rotate(360deg) ;
+  }
+  100% {
+    transform:  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes v3_anim{
+  0% {
+    -moz-transform:  rotate(360deg) ;
+  }
+  100% {
+    -moz-transform:  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes v3_anim {
+  0% {
+    -webkit-transform:  rotate(360deg) ;
+  }
+  100% {
+    -webkit-transform:  rotate(0deg) ;
+  }
+}
+
+@-o-keyframes v3_anim {
+  0% {
+    -o-transform:  rotate(360deg) ;
+  }
+  100% {
+    -o-transform:  rotate(0deg) ;
+  }
+}
+
+.v4 {position: absolute; width: 53px; height: 53px; right: 30%; top: -40px; margin: auto;
+animation: animationFrames linear 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  -webkit-animation: animationFrames linear 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: animationFrames linear 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: animationFrames linear 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;}
+
+@keyframes animationFrames{
+  0% {
+    transform:  rotate(0deg) ;
+  }
+  100% {
+    transform:  rotate(360deg) ;
+  }
+}
+
+@-moz-keyframes animationFrames{
+  0% {
+    -moz-transform:  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  rotate(360deg) ;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    -webkit-transform:  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  rotate(360deg) ;
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+    -o-transform:  rotate(0deg) ;
+  }
+  100% {
+    -o-transform:  rotate(360deg) ;
+  }
+}

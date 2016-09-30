@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>100</title>
+  <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+  <link href="Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.placeholder.min.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.ui.datepicker-ru.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $("input[placeholder], textarea[placeholder]").placeholder();
+        $(".datePicker").datepicker({ firstDay: 1, dateFormat: 'dd.mm.yy', showOtherMonths: true, selectOtherMonths: true, showButtonPanel: true, buttonImage: "Content/images/calendar2.png", showOn: "both" });
+    });
+  </script>
+  
+  <style type="text/css">
+
+#shadow {
+   display: block; z-index: 1;
+   background-image: url(Content/images/shadow.png); background-repeat: repeat;
+   position:absolute; 
+   top:0; 
+   left:0;
+   width:100%;
+   height:100%;
+}
+</style>
+  
+</head>
+<body>
+<div id="shadow"></div>
+
+
+
+<div id="sup-box" align="center">
+<a href="#" class="sx"></a>
+<div class="mar_title_pic"><img src="Content/images/icon_support.gif" width="47" height="49" align="absmiddle" /></div>
+  <div class="mar_title">Служба поддержки</div>
+  <div style="clear: both;"></div>
+<div id="content_box">
+    <!-- main -->
+    <div id="support-cont">
+
+    <table width="100%" cellpadding="0" cellspacing="0" class="stable">
+      <tr class="st-color">
+    <td><div class="s-select">Дата</div></td>
+    <td width="600">Магазин</td>
+    <td>Сумма</td>
+    <td>Бонусы</td>
+    <td>Статус платежа</td>
+  </tr>
+  <tr>
+    <td>15.12.2011</td>
+    <td>
+    <div>Сепермаркет сантехника &quot;Слуги Нептуна&quot;</div>
+    <div><strong>Способ оплаты:</strong> карта # 4561 4561 4561 4561</div>
+    <div><strong>№ заказа:</strong> 545665</div>
+    <div><strong>ID:</strong> 11912598</div></td>
+    <td><strong>4018</strong> руб.</td>
+    <td><span class="rec_bonus">150</span></td>
+    <td><div class="std1"><nobr>Ожидание платежа до</nobr><br />
+      21.12.2011 в 13:45</div></td>
+  </tr>
+    </table>   
+
+    <h1>Ваш вопрос</h1>
+    <textarea name="uname" rows="5"></textarea>
+   
+    <div class="sbutline">
+    <div class="buttonline lfloat"><a href="#">Отправить</a></div>
+    <div class="cancle"><a href="#">Отменить</a></div>
+  </div>
+
+
+<br />
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="80%" align="left" valign="top">
+            
+            <div class="s-contact">
+              <h1>Или позвоните нам по телефону:</h1>
+              <div style="margin-top: 10px;">8 (495) 981-55-00 (для Москвы и области)</div>
+              <div>8 (800) 100-55-11 (для регионов)</div>
+              
+              <div class="mar1">с 9.00 до 21.00 по московскому времени (GMT +4) по рабочим дням</div>
+            <a href="#">Почтовый адрес</a></div>
+          </td>
+          <td width="20%" valign="top">
+            <div id="support-right">
+              
+              Сфотографируйте этот 
+              QR-код, чтобы получить все 
+              наши контакты на телефон<br />
+  <br />
+  <img src="Content/images/qr-support.png" width="213" height="213" />
+  </li>
+            </div>
+            
+          </td>
+        </tr>
+</table>
+
+    </div>
+
+ <!-- /main -->
+  </div>
+</div>
+
+
+    
+<div id="content">
+
+
+<!-- msg -->
+<div id="topnote">
+В Личном Кабинете вы можете выбрать свои любимые <a href="#">способы оплаты</a>, а также заранее ввести свои <a href="#">платежные реквизиты</a>, 
+чтобы тратить меньше времени на операции.
+</div>
+<!-- /msg -->
+
+<div id="headline">
+<!-- top -->
+  <div class="logo"><img src="Content/images/robo3.gif" width="102" height="18" align="absmiddle" /> &#8212; САМЫЙ УДОБНЫЙ СПОСОБ ОПЛАТЫ</div>
+  <div class="headline_right">
+    <a href="#">Поддержка</a>
+    <div class="rdot"></div>
+    <span class="bonus-up">2970</span>
+    <a href="#">Бонусы</a>
+    <div class="rdot"></div>
+    <a href="#" class="tmail">ivan.toporyshkin@gmail.com</a>
+  </div>
+<!-- /top -->
+</div>
+
+<div id="box1">
+  
+  <div id="header" class="border1">
+  <!-- menu -->
+    <div class="mar_title_pic"><img src="Content/images/icon.gif" width="47" height="49" align="absmiddle" /></div><div class="mar_title">Личный кабинет</div>
+    <div id="mainmenu">
+        <a href="#" class="sel">Операции</a>
+        <a href="#">Бонусы</a>
+        <a href="#">Деньги</a>
+        <a href="#">Мой профиль</a>
+    </div>
+  <!-- /menu -->
+  </div>
+
+  <div align="center" id="main1" class="border1">
+    <div id="content_box">
+    <!-- main -->
+
+      <!-- opmethods -->
+      <div id="search">
+        <form name="form1" method="post" action="">
+          <label>
+            <input name="textfield" type="text" placeholder="Поиск платежа" / size="30">
+            </label>
+          </form>
+      </div>
+      <div id="exl_table">
+        <a href="#"><img src="Content/images/icon_xls_2.gif" width="21" height="21" border="0" align="absmiddle" / style="margin: 4px;">Скачать таблицу в XLS</a>
+      </div>
+      <!-- /opmethods -->
+
+      <!-- oplist -->
+      <table border="0" cellspacing="0" cellpadding="0" class="thead">
+      <tr>
+        <td class="c1"><a href="#"><img src="Content/images/arrow_table_d2.png" width="15" height="17" border="0" align="absmiddle" /></a>Дата</td>
+        <td class="c2">Магазин</td>
+        <td class="c3">Сумма</td>
+        <td class="c4">Бонусы</td>
+        <td class="c5">Статус платежа</td>
+        <td class="c6">Поддержка</td>
+      </tr>
+      </table>
+
+      <div class="oplist">  
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="c1">15.12.2011</td>
+        <td class="c2">Супермаркет сантехники &ldquo;Слуги Нептуна&rdquo;</td>
+        <td class="c3"><strong>4018</strong> руб.</td>
+        <td class="c4"><span class="rec_bonus">150</span></td>
+        <td class="c5 err">Ожидание платежа до 21.12.2011 в 13:45</td>
+        <td class="c6"><a href="#">Помощь</a>&nbsp; <img src="Content/images/arrow_down.png" width="29" height="29" border="0" align="absmiddle" /></td>
+       </tr>
+      </table>
+      
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="c1">15.12.2011</td>
+        <td class="c2">Оплата мобильного телефона</td>
+        <td class="c3"><strong>4018</strong> руб.</td>
+        <td class="c4"><span class="rec_bonus">50</span></td>
+        <td class="c5 ok">Исполнен</td>
+        <td class="c6"><a href="#">Помощь</a>&nbsp; <img src="Content/images/arrow_down.png" width="29" height="29" border="0" align="absmiddle" /></td>
+      </tr>
+      </table>
+      
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="c1">15.12.2011</td>
+        <td class="c2">Оплата мобильного телефона</td>
+        <td class="c3"><strong>4018</strong> руб.</td>
+        <td class="c4"><span class="rec_bonus">50</span></td>
+        <td class="c5 ok">Исполнен</td>
+        <td class="c6"><a href="#">Помощь</a>&nbsp; <img src="Content/images/arrow_down.png" width="29" height="29" border="0" align="absmiddle" /></td>
+      </tr>
+      </table>
+      </div>
+      <br />
+      <!-- nav -->
+
+      <div class="nav">
+          <a href="#" class="prev disabled">&lt;</a>
+          <a href="#" class="prev">&lt;</a>
+          <a href="#">1</a>
+          <a href="#" class="current">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          ...
+          <a href="#">10</a>
+          <a href="#" class="next">&gt;</a>
+          <a href="#" class="next disabled">&gt;</a>
+      </div>
+      <!-- /nav -->
+      <br /><br />
+
+      <div id="opfilter"> 
+      <form name="form2" method="post" action="">
+        <label for="opfrom">Показывать записи, начиная с</label>
+        <input type="text" name="opfrom" id="opfrom" value="01.01.2010" size="10" class="datePicker" />
+        <label for="opperiod" id="opperiod">за</label>
+        <select name="select">
+          <option>прошлый год</option>
+        </select>
+        <label for="oppage">по</label>
+        <select name="oppage" id="oppage">
+          <option>10</option>
+        </select>
+        записей на одну страницу
+      </form>
+      </div>
+      <!-- /oplist -->
+
+    <!-- /main -->
+    </div>
+
+    <div id="copyright">&copy; 2012 ЗАО &quot;Центр Интернет платежей&rdquo;</div>
+  </div>
+
+</div>
+
+<div id="footer">
+<!-- footer -->
+  <div id="pci_box">
+    <img src="Content/images/logo_pci.gif" width="97" height="32" />
+    <div>Безопасность платежей гарантируется сертификатами THAWTE и PCI. Посмотреть сертификаты подробнее.</div>
+  </div>
+
+  <div id="footermenu">
+    <a href="#">Обратная связь</a>
+    <div class="rdot"></div>
+    <a href="#">Частые вопросы</a>
+    <div class="rdot"></div>
+    <a href="#">Предложите способ оплаты</a>
+  </div>
+<!-- /footer -->
+</div>
+
+</div>
+</body>
+</html>

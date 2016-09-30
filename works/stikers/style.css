@@ -1,0 +1,4 @@
+.stiker256 { position: relative; display: inline-block; width: 256px; height: 256px; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-right: 10px; margin-bottom: 10px; }
+.stiker256 div { position: absolute; }
+.stiker256_anim { display: none; }
+.stiker256:hover .stiker256_anim { display: block; }
